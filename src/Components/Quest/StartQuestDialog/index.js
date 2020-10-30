@@ -10,7 +10,7 @@ import DialogContent from '@material-ui/core/DialogContent';
 import DialogContentText from '@material-ui/core/DialogContentText';
 import DialogTitle from '@material-ui/core/DialogTitle';
 
-import _get from 'lodash/get';
+// import _get from 'lodash/get';
 
 const styles = theme => ({
 
@@ -40,7 +40,10 @@ class StartQuestDialog extends Component {
   };
 
   render() {
-    const { user, quest } = this.props;
+    const {
+      // user,
+      quest
+    } = this.props;
 
     // const availableQuests = _get(user, 'quests.available');
 
