@@ -60,7 +60,7 @@ class AppDrawer extends React.Component {
               onKeyDown={onToggle}
             >
               <Toolbar>
-                <Typography color="inherit" variant="title">
+                <Typography color="inherit" variant="h6">
                   Guild Man
                 </Typography>
               </Toolbar>

@@ -92,12 +92,12 @@ class Layout extends React.Component {
                 <MenuIcon />
               </IconButton>
             </Hidden>
-            <Typography variant="title" color="inherit">
+            <Typography variant="h6" color="inherit">
               Guild Man
             </Typography>
             <div className={classes.flex} />
             {user && (
-              <Typography variant="title" color="inherit">
+              <Typography variant="h6" color="inherit">
                 Gold: {user.gold}
               </Typography>
             )}
