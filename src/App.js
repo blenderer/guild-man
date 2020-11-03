@@ -25,9 +25,6 @@ import {
 } from './Context/User';
 
 const theme = createMuiTheme({
-  typography: {
-    fontFamily: '"Courier New"'
-  },
   palette: {
     primary: brown
   }
