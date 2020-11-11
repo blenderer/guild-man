@@ -8,7 +8,8 @@ export { Consumer };
 class UserProvider extends Component {
 
   state = {
-    user: null
+    user: null,
+    characters: {},
   };
 
   componentDidMount () {
@@ -30,6 +31,25 @@ class UserProvider extends Component {
             api.fetch('refreshTavernRecruits', {method: 'POST'});
           }
 
+          if (user.characters.available) {
+            const charNames = Object.keys(user.characters.available)
+            charNames.map(name => {
+              firebase.database().ref(`/characters/${authUser.uid}~${name}`).on('value', async charSnap => {
+                let char = charSnap.val();
+
+                this.setState(prevState => ({
+                  ...prevState,
+                  characters: {
+                    ...prevState.characters,
+                    [char.name]: char,
+                  }
+                }));
+              });
+            });
+
+            
+          }
+
           this.setState(prevState => ({
             ...prevState,
             user: { ...user }
@@ -46,6 +66,7 @@ class UserProvider extends Component {
   }
 
   render() {
+    console.log(this.state.characters)
     return (
       <Provider value={this.state.user}>
         {this.props.children}

@@ -41,9 +41,11 @@ class StartQuestDialog extends Component {
 
   render() {
     const {
-      // user,
+      user,
       quest
     } = this.props;
+
+    console.log(user)
 
     // const availableQuests = _get(user, 'quests.available');
 
